@@ -11,7 +11,7 @@ const app = Vue.createApp({
             date1: null,
             date2: null,
             results: [],
-            newResult: null,
+            newResult: [],
             error: null
         }
     },
@@ -20,14 +20,14 @@ const app = Vue.createApp({
             this.date1 = null
             this.date2 = null
             this.results = []
-            this.newResult = null
+            this.newResult = []
             this.error = null
         },
         calculate() {
             axios.post('http://datecalculator.loc/api/calculate', {
                 date1: this.date1,
                 date2: this.date2
-            }).then(responce => this.newResult = responce.data.data)
+            }).then(responce => this.newResult = responce.data)
             .catch(error => this.error = error.message)
         }
     }
