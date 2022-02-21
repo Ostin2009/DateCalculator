@@ -18,7 +18,8 @@ class StorageController extends Controller
      */
     public function index()
     {
-        return RecordResource::collection(Record::all());
+        return RecordResource::collection(Record::orderBy('id', 'desc')
+        ->get());
     }
 
     /**
