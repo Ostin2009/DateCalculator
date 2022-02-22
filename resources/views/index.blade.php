@@ -19,7 +19,6 @@
         @verbatim
         <h1 v-if="error"> {{ error }}</h1>
         <ul v-else>
-            <li v-if="newResult">Между {{ newResult.date1 }} и {{ newResult.date2 }} годы: {{ newResult.yearsDifference }}, месяцы: {{ newResult.monthsDifference }}, дни: {{ newResult.daysDifference }}</li>
             <li v-for="(result, key) in results.data">
                     Между {{ result.date1 }} и {{ result.date2 }} годы: {{ result.yearsDifference }}, месяцы: {{ result.monthsDifference }}, дни: {{ result.daysDifference }}
             </li>

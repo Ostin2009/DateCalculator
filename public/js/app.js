@@ -19281,18 +19281,16 @@ var app = vue__WEBPACK_IMPORTED_MODULE_1__.createApp({
     return {
       date1: null,
       date2: null,
-      results: [],
-      newResult: null,
-      error: null
+      error: null,
+      results: []
     };
   },
   methods: {
     clear: function clear() {
       this.date1 = null;
       this.date2 = null;
-      this.results = [];
-      this.newResult = null;
       this.error = null;
+      this.results.data = [];
     },
     calculate: function calculate() {
       var _this = this;
@@ -19301,7 +19299,7 @@ var app = vue__WEBPACK_IMPORTED_MODULE_1__.createApp({
         date1: this.date1,
         date2: this.date2
       }).then(function (responce) {
-        return _this.newResult = responce.data.data;
+        _this.results.data.unshift(responce.data.data);
       })["catch"](function (error) {
         return _this.error = error.message;
       });
